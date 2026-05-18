@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>piora — Soft Spring Collection</title>
-
-  <link rel="preload" as="image" href="./ingredients/piora_main.jpeg" />
+  <link rel="preload" as="image" href="./ingridients/piora_main.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #fff8fb;
@@ -25,9 +23,7 @@
       --white: #ffffff;
       --shadow: 0 12px 32px rgba(160, 107, 129, 0.12);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(180deg, #fff8fb 0%, #fffdfd 100%);
@@ -35,10 +31,8 @@
       min-height: 100vh;
       line-height: 1.5;
     }
-
     a { color: inherit; text-decoration: none; }
     button { border: none; background: none; cursor: pointer; font: inherit; }
-
     .site-header {
       position: sticky;
       top: 0;
@@ -47,7 +41,6 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(234, 214, 223, 0.9);
     }
-
     .site-header-inner {
       max-width: 1320px;
       margin: 0 auto;
@@ -58,7 +51,6 @@
       padding: 0 28px;
       gap: 20px;
     }
-
     .nav-left, .nav-right {
       display: flex;
       align-items: center;
@@ -67,24 +59,19 @@
       letter-spacing: 0.12em;
       color: var(--text);
     }
-
     .nav-right { justify-content: flex-end; }
-
     .nav-item {
       position: relative;
       cursor: default;
       transition: color 0.2s ease;
     }
-
     .nav-item.link { cursor: pointer; }
     .nav-item:hover { color: var(--rose); }
-
     .nav-item.shop {
       position: relative;
       padding-bottom: 18px;
       margin-bottom: -18px;
     }
-
     .logo {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -95,7 +82,6 @@
       text-align: center;
       cursor: pointer;
     }
-
     .dropdown {
       position: absolute;
       top: calc(100% - 2px);
@@ -112,14 +98,12 @@
       transform: translateY(6px);
       transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
     }
-
     .nav-item.shop:hover .dropdown,
     .nav-item.shop .dropdown:hover {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
     }
-
     .dropdown button {
       width: 100%;
       text-align: left;
@@ -129,21 +113,17 @@
       color: var(--text);
       transition: background 0.2s ease, color 0.2s ease;
     }
-
     .dropdown button:hover {
       background: var(--pink-soft);
       color: var(--rose);
     }
-
     .container {
       max-width: 1320px;
       margin: 22px auto 0;
       padding: 0 28px 100px;
     }
-
     .page { display: none; }
     .page.active { display: block; }
-
     .card {
       background: rgba(255,255,255,0.82);
       border: 1px solid var(--border);
@@ -152,7 +132,6 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
-
     .home-hero {
       position: relative;
       min-height: calc(100vh - 140px);
@@ -161,32 +140,28 @@
       padding: 52px;
       overflow: hidden;
     }
-
     .home-hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
         linear-gradient(to top, rgba(58, 35, 45, 0.36), rgba(58, 35, 45, 0.06)),
-        url('./ingredients/piora_main.jpeg') center center / cover no-repeat;
+        url('./ingridients/piora_main.jpeg') center center / cover no-repeat;
       z-index: 0;
       transform: scale(1.02);
     }
-
     .hero-copy {
       position: relative;
       z-index: 1;
       color: white;
       max-width: 560px;
     }
-
     .hero-eyebrow {
       font-size: 12px;
       letter-spacing: 0.18em;
       margin-bottom: 18px;
       opacity: 0.94;
     }
-
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -195,20 +170,17 @@
       font-weight: 600;
       margin-bottom: 18px;
     }
-
     .hero-desc {
       font-size: 14px;
       line-height: 1.9;
       opacity: 0.95;
       margin-bottom: 28px;
     }
-
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -219,50 +191,42 @@
       letter-spacing: 0.08em;
       transition: all 0.2s ease;
     }
-
     .btn-primary {
       background: rgba(255,255,255,0.94);
       color: #4a363f;
     }
     .btn-primary:hover { background: #fff; }
-
     .btn-outline-light {
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.48);
       color: white;
     }
     .btn-outline-light:hover { background: rgba(255,255,255,0.2); }
-
     .btn-secondary {
       border: 1px solid var(--border);
       background: #fff;
       color: var(--text);
     }
     .btn-secondary:hover { background: #fff6f9; }
-
     .btn-accent {
       background: linear-gradient(135deg, #e3b0c2 0%, #cd90a8 100%);
       color: white;
       box-shadow: 0 10px 20px rgba(205, 144, 168, 0.2);
     }
     .btn-accent:hover { filter: brightness(1.03); }
-
     .section-card { padding: 30px; }
-
     .section-title {
       font-size: 28px;
       margin-bottom: 8px;
       letter-spacing: -0.02em;
       color: #48353d;
     }
-
     .section-desc {
       font-size: 13px;
       color: var(--muted);
       margin-bottom: 22px;
       line-height: 1.8;
     }
-
     .category-badge {
       display: inline-flex;
       align-items: center;
@@ -274,13 +238,11 @@
       font-size: 12px;
       margin-bottom: 18px;
     }
-
     .product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
-
     .product-card {
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -289,13 +251,11 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
     }
-
     .product-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 18px 28px rgba(201, 135, 157, 0.12);
       border-color: #e1b7c8;
     }
-
     .product-thumb {
       height: 320px;
       background: linear-gradient(180deg, #f8edf1 0%, #efdce5 100%);
@@ -304,34 +264,28 @@
       justify-content: center;
       font-size: 64px;
     }
-
     .product-info { padding: 16px; }
-
     .product-name {
       font-size: 14px;
       margin-bottom: 6px;
       color: #4b3740;
     }
-
     .product-meta {
       font-size: 12px;
       color: var(--muted);
       margin-bottom: 10px;
     }
-
     .product-price {
       font-size: 14px;
       font-weight: 600;
       color: var(--rose);
     }
-
     .detail-layout {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 36px;
       padding: 34px;
     }
-
     .detail-media {
       min-height: 620px;
       border-radius: 22px;
@@ -341,55 +295,47 @@
       justify-content: center;
       font-size: 120px;
     }
-
     .detail-category {
       font-size: 12px;
       color: var(--muted);
       letter-spacing: 0.08em;
       margin-bottom: 14px;
     }
-
     .detail-name {
       font-size: 34px;
       letter-spacing: -0.03em;
       margin-bottom: 10px;
       color: #47343c;
     }
-
     .detail-price {
       font-size: 24px;
       font-weight: 600;
       margin-bottom: 18px;
       color: var(--rose);
     }
-
     .detail-desc {
       font-size: 14px;
       color: var(--muted);
       line-height: 1.9;
       margin-bottom: 28px;
     }
-
     .detail-divider {
       border: none;
       border-top: 1px solid var(--border);
       margin: 24px 0;
     }
-
     .qty-row {
       display: flex;
       align-items: center;
       gap: 14px;
       margin-bottom: 18px;
     }
-
     .qty-label {
       font-size: 12px;
       color: var(--muted);
       letter-spacing: 0.08em;
       min-width: 34px;
     }
-
     .qty-box {
       display: inline-flex;
       align-items: center;
@@ -398,7 +344,6 @@
       overflow: hidden;
       background: white;
     }
-
     .qty-btn {
       width: 42px;
       height: 42px;
@@ -406,42 +351,34 @@
       color: var(--text);
       background: white;
     }
-
     .qty-btn:hover { background: #fff4f8; }
-
     .qty-display {
       min-width: 44px;
       text-align: center;
       font-size: 14px;
       font-weight: 500;
     }
-
     .total-line {
       font-size: 14px;
       margin-bottom: 22px;
       color: var(--text);
     }
-
     .total-line strong {
       font-size: 18px;
       margin-left: 8px;
       color: var(--rose);
     }
-
     .detail-actions {
       display: flex;
       gap: 12px;
     }
-
     .cart-layout, .order-layout, .complete-layout { padding: 30px; }
-
     .cart-items {
       display: flex;
       flex-direction: column;
       gap: 16px;
       margin-bottom: 20px;
     }
-
     .cart-item {
       display: grid;
       grid-template-columns: 100px 1fr auto;
@@ -452,7 +389,6 @@
       padding: 14px;
       background: rgba(255,255,255,0.78);
     }
-
     .cart-thumb {
       width: 100px;
       height: 110px;
@@ -463,25 +399,21 @@
       justify-content: center;
       font-size: 40px;
     }
-
     .cart-name {
       font-size: 15px;
       margin-bottom: 6px;
       color: #47343c;
     }
-
     .cart-meta {
       font-size: 12px;
       color: var(--muted);
     }
-
     .cart-price {
       font-size: 15px;
       font-weight: 600;
       white-space: nowrap;
       color: var(--rose);
     }
-
     .summary-box {
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -489,7 +421,6 @@
       padding: 18px;
       margin-bottom: 22px;
     }
-
     .summary-row {
       display: flex;
       justify-content: space-between;
@@ -497,7 +428,6 @@
       padding: 6px 0;
       color: var(--muted);
     }
-
     .summary-row.total {
       margin-top: 10px;
       padding-top: 14px;
@@ -506,9 +436,7 @@
       font-size: 18px;
       font-weight: 600;
     }
-
     .field-group { margin-bottom: 16px; }
-
     .field-label {
       display: block;
       font-size: 12px;
@@ -516,7 +444,6 @@
       margin-bottom: 8px;
       letter-spacing: 0.08em;
     }
-
     .field-input {
       width: 100%;
       height: 46px;
@@ -527,19 +454,29 @@
       background: white;
       color: var(--text);
     }
-
     .field-input:focus {
       outline: none;
       border-color: #daa9bc;
       box-shadow: 0 0 0 4px rgba(230, 184, 200, 0.16);
     }
-
+    .field-hint {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+    .field-error {
+      font-size: 11px;
+      color: #c4536f;
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+      min-height: 14px;
+    }
     .payment-row {
       display: flex;
       gap: 10px;
       margin-bottom: 20px;
     }
-
     .payment-method {
       flex: 1;
       border: 1px solid var(--border);
@@ -554,55 +491,152 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
-
     .payment-method:hover { border-color: #dfb9c8; }
-
     .payment-method.selected {
       background: var(--pink-soft);
       border-color: #dfb9c8;
       color: var(--rose);
       font-weight: 600;
     }
-
     .empty-cart {
       padding: 40px 0 20px;
       color: var(--muted);
       font-size: 14px;
       text-align: center;
     }
-
     .complete-box {
       text-align: center;
       padding: 60px 20px;
     }
-
     .complete-icon {
       font-size: 42px;
       margin-bottom: 18px;
       color: var(--rose);
     }
-
     .complete-title {
       font-size: 36px;
       margin-bottom: 12px;
       letter-spacing: -0.03em;
       color: #47343c;
     }
-
     .complete-desc {
       color: var(--muted);
       font-size: 14px;
       line-height: 1.8;
       margin-bottom: 8px;
     }
-
     .complete-order {
       margin-top: 10px;
       font-size: 12px;
       color: var(--muted);
       letter-spacing: 0.08em;
     }
-
+    .auth-card {
+      max-width: 480px;
+      margin: 30px auto;
+      padding: 36px 30px;
+    }
+    .auth-helper {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 18px;
+      letter-spacing: 0.04em;
+    }
+    .auth-helper a {
+      color: var(--rose);
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+    .guest-notice {
+      background: var(--pink-soft);
+      color: var(--rose);
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .guest-notice strong {
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.1em;
+    }
+    /* 주문 목록 */
+    .orders-list { display: flex; flex-direction: column; gap: 14px; }
+    .order-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.86);
+    }
+    .order-card.cancelled { background: rgba(247, 240, 243, 0.8); }
+    .order-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .order-id {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      color: #4b3740;
+      font-weight: 600;
+    }
+    .order-date {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 6px 0 10px;
+      letter-spacing: 0.04em;
+    }
+    .order-products {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .order-total {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--rose);
+    }
+    .order-card.cancelled .order-total { color: var(--muted); text-decoration: line-through; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .status-pill.paid {
+      background: #e8f3ec;
+      color: #4a7d5c;
+    }
+    .status-pill.cancelled {
+      background: #f2e2e6;
+      color: #a36277;
+    }
+    .my-account-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .user-meta {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .user-meta strong { color: var(--rose); font-weight: 600; }
     .toast {
       position: fixed;
       left: 50%;
@@ -620,19 +654,16 @@
       transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
       z-index: 2000;
     }
-
     .toast.show {
       opacity: 1;
       visibility: visible;
       transform: translateX(-50%) translateY(-8px);
     }
-
     @media (max-width: 1100px) {
       .product-grid { grid-template-columns: repeat(3, 1fr); }
       .detail-layout { grid-template-columns: 1fr; }
       .detail-media { min-height: 460px; }
     }
-
     @media (max-width: 820px) {
       .site-header-inner {
         grid-template-columns: 1fr;
@@ -647,7 +678,6 @@
       .home-hero { min-height: 520px; padding: 34px 24px; }
       .hero-title { font-size: 58px; }
     }
-
     @media (max-width: 560px) {
       .product-grid { grid-template-columns: 1fr; }
       .detail-actions, .payment-row, .hero-actions { flex-direction: column; }
@@ -675,18 +705,15 @@
         </div>
         <div class="nav-item">ABOUT</div>
         <div class="nav-item">COMMUNITY</div>
+        <div class="nav-item link" onclick="goToMyAccount()">MY ACCOUNT</div>
       </nav>
-
       <div class="logo" onclick="goToHome()">piora</div>
-
       <nav class="nav-right">
-        <div class="nav-item">ACCOUNT</div>
         <div class="nav-item">SEARCH</div>
         <div class="nav-item link" onclick="goToCart()">CART</div>
       </nav>
     </div>
   </header>
-
   <main class="container">
     <section class="page active" id="page-home">
       <div class="card home-hero">
@@ -704,7 +731,6 @@
         </div>
       </div>
     </section>
-
     <section class="page" id="page-list">
       <div class="card section-card">
         <div class="category-badge">CATEGORY <span id="currentCategoryLabel">ALL</span></div>
@@ -716,12 +742,10 @@
         <div class="product-grid" id="productGrid"></div>
       </div>
     </section>
-
     <section class="page" id="page-detail">
       <div class="card">
         <div class="detail-layout">
           <div class="detail-media" id="detailThumb">👗</div>
-
           <div class="detail-panel">
             <div>
               <div class="detail-category" id="detailCategory">CATEGORY</div>
@@ -731,9 +755,7 @@
                 부드러운 분위기와 가벼운 착용감을 중심으로 구성한 상품입니다.
                 실제 서비스에서는 이미지, 옵션, 배송 정보 등을 함께 구성할 수 있습니다.
               </p>
-
               <hr class="detail-divider" />
-
               <div class="qty-row">
                 <div class="qty-label">QTY</div>
                 <div class="qty-box">
@@ -742,10 +764,8 @@
                   <button class="qty-btn" onclick="changeQty(1)">+</button>
                 </div>
               </div>
-
               <div class="total-line">TOTAL <strong id="totalPrice">0원</strong></div>
             </div>
-
             <div class="detail-actions">
               <button class="btn btn-secondary" style="flex:1" onclick="goBackToCurrentList()">BACK TO LIST</button>
               <button class="btn btn-accent" style="flex:1.4" onclick="addToCart()">ADD TO CART</button>
@@ -754,51 +774,43 @@
         </div>
       </div>
     </section>
-
     <section class="page" id="page-cart">
       <div class="card cart-layout">
         <h2 class="section-title">Cart</h2>
         <p class="section-desc">
           piora 오픈 이벤트 기간 동안 전 상품 무료 배송으로 진행됩니다.
         </p>
-
+        <div id="cartGuestNotice"></div>
         <div class="cart-items" id="cartItems"></div>
-
         <div class="summary-box">
           <div class="summary-row"><span>상품 금액</span><span id="cartSubtotal">0원</span></div>
           <div class="summary-row"><span>배송비</span><span>FREE</span></div>
           <div class="summary-row total"><span>TOTAL</span><span id="cartTotal">0원</span></div>
         </div>
-
         <div class="detail-actions">
           <button class="btn btn-secondary" style="flex:1" onclick="goToHome()">HOME</button>
           <button class="btn btn-accent" style="flex:1.2" onclick="goToOrder()">ORDER</button>
         </div>
       </div>
     </section>
-
     <section class="page" id="page-order">
       <div class="card order-layout">
         <h2 class="section-title">Order Sheet</h2>
         <p class="section-desc">
           배송 정보와 결제 수단을 확인해 주세요.
         </p>
-
         <div class="field-group">
           <label class="field-label">RECIPIENT</label>
           <input class="field-input" type="text" value="신민주" id="recipientName">
         </div>
-
         <div class="field-group">
           <label class="field-label">ADDRESS</label>
           <input class="field-input" type="text" value="서울시 강남구 테헤란로 123" id="address">
         </div>
-
         <div class="field-group">
           <label class="field-label">PHONE</label>
           <input class="field-input" type="text" value="010-1234-5678" id="phone">
         </div>
-
         <div class="field-group">
           <label class="field-label">PAYMENT</label>
           <div class="payment-row">
@@ -807,20 +819,17 @@
             <div class="payment-method" onclick="selectPayment(this, 'bank')">BANK</div>
           </div>
         </div>
-
         <div class="summary-box">
           <div class="summary-row"><span>상품 금액</span><span id="orderSubtotal">0원</span></div>
           <div class="summary-row"><span>배송비</span><span>FREE</span></div>
           <div class="summary-row total"><span>TOTAL</span><span id="orderTotal">0원</span></div>
         </div>
-
         <div class="detail-actions">
           <button class="btn btn-secondary" style="flex:1" onclick="goToCart()">BACK TO CART</button>
           <button class="btn btn-accent" style="flex:1.2" onclick="completePurchase()">COMPLETE PURCHASE</button>
         </div>
       </div>
     </section>
-
     <section class="page" id="page-complete">
       <div class="card complete-layout">
         <div class="complete-box">
@@ -829,19 +838,116 @@
           <p class="complete-desc" id="completeProductName">상품명</p>
           <p class="complete-desc" id="completeAmount">결제금액: 0원</p>
           <div class="complete-order" id="orderNumber">ORDER_ID: #000000</div>
-
           <div class="hero-actions" style="justify-content:center; margin-top:26px;">
             <button class="btn btn-secondary" onclick="goToHome()">HOME</button>
-            <button class="btn btn-accent" onclick="goToList('ALL')">CONTINUE SHOPPING</button>
+            <button class="btn btn-accent" onclick="goToMyAccount()">VIEW ORDERS</button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- SIGN UP -->
+    <section class="page" id="page-signup">
+      <div class="card auth-card">
+        <h2 class="section-title">Sign Up</h2>
+        <p class="section-desc">piora 계정을 만들면 장바구니, 주문 내역이 안전하게 보관됩니다.</p>
+        <div class="guest-notice">
+          현재 게스트 세션 <strong id="signupGuestId">GUEST</strong>
+        </div>
+        <div class="field-group">
+          <label class="field-label">USERNAME (ID)</label>
+          <input class="field-input" type="text" id="signupUsername" placeholder="영문/숫자 4자 이상" autocomplete="off">
+          <div class="field-error" id="signupUsernameError"></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">EMAIL</label>
+          <input class="field-input" type="email" id="signupEmail" placeholder="you@example.com" autocomplete="off">
+          <div class="field-error" id="signupEmailError"></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">NAME</label>
+          <input class="field-input" type="text" id="signupName" placeholder="이름" autocomplete="off">
+          <div class="field-error" id="signupNameError"></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">PASSWORD</label>
+          <input class="field-input" type="password" id="signupPassword" placeholder="8자 이상" autocomplete="new-password">
+          <div class="field-error" id="signupPasswordError"></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">CONFIRM PASSWORD</label>
+          <input class="field-input" type="password" id="signupPasswordConfirm" placeholder="비밀번호 한 번 더 입력" autocomplete="new-password">
+          <div class="field-error" id="signupPasswordConfirmError"></div>
+        </div>
+        <div class="detail-actions" style="margin-top:8px;">
+          <button class="btn btn-secondary" style="flex:1" onclick="goToLogin()">SIGN IN INSTEAD</button>
+          <button class="btn btn-accent" style="flex:1.2" onclick="signup()">SIGN UP</button>
+        </div>
+        <div class="auth-helper">
+          이미 계정이 있으신가요?<a onclick="goToLogin()">로그인</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN -->
+    <section class="page" id="page-login">
+      <div class="card auth-card">
+        <h2 class="section-title">Welcome back</h2>
+        <p class="section-desc">계정으로 로그인하면 게스트 장바구니/주문 내역이 자동으로 합쳐집니다.</p>
+        <div class="guest-notice">
+          현재 게스트 세션 <strong id="loginGuestId">GUEST</strong>
+        </div>
+        <div class="field-group">
+          <label class="field-label">USERNAME (ID)</label>
+          <input class="field-input" type="text" id="loginUsername" autocomplete="username">
+          <div class="field-error" id="loginUsernameError"></div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">PASSWORD</label>
+          <input class="field-input" type="password" id="loginPassword" autocomplete="current-password">
+          <div class="field-error" id="loginPasswordError"></div>
+        </div>
+        <div class="detail-actions" style="margin-top:8px;">
+          <button class="btn btn-secondary" style="flex:1" onclick="goToSignup()">SIGN UP</button>
+          <button class="btn btn-accent" style="flex:1.2" onclick="login()">SIGN IN</button>
+        </div>
+        <div class="auth-helper">
+          piora가 처음이세요?<a onclick="goToSignup()">회원가입</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MY ACCOUNT (ORDERS) -->
+    <section class="page" id="page-account">
+      <div class="card section-card">
+        <div class="my-account-header">
+          <div>
+            <h2 class="section-title">My Account</h2>
+            <p class="section-desc" id="accountWelcome">계정 정보와 주문 내역을 확인하세요.</p>
+          </div>
+          <div class="user-meta" id="accountUserMeta"></div>
+        </div>
+        <h3 style="font-size:15px; color:#4b3740; letter-spacing:0.04em; margin:8px 0 16px;">ORDERS</h3>
+        <div class="orders-list" id="ordersList"></div>
+        <div class="detail-actions" style="margin-top:24px;">
+          <button class="btn btn-secondary" style="flex:1" onclick="goToList('ALL')">CONTINUE SHOPPING</button>
+          <button class="btn btn-accent" style="flex:1" onclick="logout()">LOGOUT</button>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <div id="toast" class="toast">장바구니에 담겼어요 🛒</div>
-
+  <div id="toast" class="toast">장바구니에 담겼어요</div>
   <script>
+    /* =========================================================
+       piora — session, auth, cart, orders, navigation
+       - 게스트(비로그인): 최초 진입 시 localStorage에 GUEST-XXXXXXXX 형식의 임시 ID 발급
+       - 회원: localStorage 'piora_users'에 저장 (가상 쇼핑몰 데모용)
+       - 장바구니: 세션 ID(piora_cart_<sid>) 단위로 분리 저장
+       - 주문 내역: 세션 ID(piora_orders_<sid>) 단위로 분리 저장
+       - 게스트 → 로그인 전환 시 게스트 카트/주문을 회원 데이터에 자동 병합
+       ========================================================= */
+
+    /* ---------- 1. 데이터 ---------- */
     const products = [
       { id: "p001", name: "26SS Ribbon Cardigan", category: "OUTER", price: 129000, emoji: "🧥" },
       { id: "p002", name: "Soft Classic Jacket", category: "OUTER", price: 168000, emoji: "🧥" },
@@ -857,40 +963,177 @@
       { id: "p012", name: "26SS Soft Dress", category: "26SS", price: 119000, emoji: "👗" }
     ];
 
+    /* ---------- 2. 상태 변수 ---------- */
     let currentProduct = null;
     let currentQty = 1;
     let cart = [];
     let selectedPayment = "card";
     let currentCategory = "ALL";
 
+    /* ---------- 3. 스토리지 키 ---------- */
+    const STORAGE = {
+      GUEST_ID: "piora_guest_id",
+      USERS: "piora_users",
+      CURRENT_USER: "piora_current_user",
+      CART_PREFIX: "piora_cart_",
+      ORDERS_PREFIX: "piora_orders_"
+    };
+
+    /* ---------- 4. 세션/유저 관리 ---------- */
+    function generateGuestId() {
+      const rand = Math.random().toString(36).slice(2, 6).toUpperCase()
+                 + Math.random().toString(36).slice(2, 6).toUpperCase();
+      return "GUEST-" + rand;
+    }
+    function getOrCreateGuestId() {
+      let gid = localStorage.getItem(STORAGE.GUEST_ID);
+      if (!gid) {
+        gid = generateGuestId();
+        localStorage.setItem(STORAGE.GUEST_ID, gid);
+      }
+      return gid;
+    }
+    function getUsers() {
+      try { return JSON.parse(localStorage.getItem(STORAGE.USERS) || "[]"); }
+      catch (e) { return []; }
+    }
+    function saveUsers(users) {
+      localStorage.setItem(STORAGE.USERS, JSON.stringify(users));
+    }
+    function getCurrentUser() {
+      try {
+        const raw = localStorage.getItem(STORAGE.CURRENT_USER);
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) { return null; }
+    }
+    function setCurrentUser(user) {
+      if (user) localStorage.setItem(STORAGE.CURRENT_USER, JSON.stringify(user));
+      else localStorage.removeItem(STORAGE.CURRENT_USER);
+    }
+    function getSessionId() {
+      const u = getCurrentUser();
+      return u ? "USER-" + u.username : getOrCreateGuestId();
+    }
+    function isLoggedIn() { return !!getCurrentUser(); }
+    function pseudoHash(text) {
+      let h = 0;
+      for (let i = 0; i < text.length; i++) {
+        h = ((h << 5) - h) + text.charCodeAt(i);
+        h |= 0;
+      }
+      return "h_" + Math.abs(h).toString(16);
+    }
+
+    /* ---------- 5. 장바구니 (세션 단위) ---------- */
+    function getCartKey(sessionId) {
+      return STORAGE.CART_PREFIX + (sessionId || getSessionId());
+    }
+    function loadCart() {
+      try {
+        const raw = localStorage.getItem(getCartKey());
+        cart = raw ? JSON.parse(raw) : [];
+      } catch (e) { cart = []; }
+    }
+    function saveCart() {
+      localStorage.setItem(getCartKey(), JSON.stringify(cart));
+    }
+
+    /* ---------- 6. 주문 (세션 단위) ---------- */
+    function getOrdersKey(sessionId) {
+      return STORAGE.ORDERS_PREFIX + (sessionId || getSessionId());
+    }
+    function loadOrders() {
+      try {
+        return JSON.parse(localStorage.getItem(getOrdersKey()) || "[]");
+      } catch (e) { return []; }
+    }
+    function saveOrders(orders) {
+      localStorage.setItem(getOrdersKey(), JSON.stringify(orders));
+    }
+
+    /* ---------- 7. 게스트 → 회원 데이터 병합 ---------- */
+    function mergeGuestDataInto(userSessionId) {
+      const guestId = localStorage.getItem(STORAGE.GUEST_ID);
+      if (!guestId) return;
+      // 카트 병합
+      const guestCartKey = STORAGE.CART_PREFIX + guestId;
+      const userCartKey  = STORAGE.CART_PREFIX + userSessionId;
+      let guestCart = [];
+      let userCart  = [];
+      try { guestCart = JSON.parse(localStorage.getItem(guestCartKey) || "[]"); } catch (e) {}
+      try { userCart  = JSON.parse(localStorage.getItem(userCartKey)  || "[]"); } catch (e) {}
+      if (guestCart.length > 0) {
+        guestCart.forEach(g => {
+          const exist = userCart.find(u => u.id === g.id);
+          if (exist) exist.qty += g.qty;
+          else userCart.push(g);
+        });
+        localStorage.setItem(userCartKey, JSON.stringify(userCart));
+        localStorage.removeItem(guestCartKey);
+      }
+      // 주문 병합
+      const guestOrdersKey = STORAGE.ORDERS_PREFIX + guestId;
+      const userOrdersKey  = STORAGE.ORDERS_PREFIX + userSessionId;
+      let guestOrders = [];
+      let userOrders  = [];
+      try { guestOrders = JSON.parse(localStorage.getItem(guestOrdersKey) || "[]"); } catch (e) {}
+      try { userOrders  = JSON.parse(localStorage.getItem(userOrdersKey)  || "[]"); } catch (e) {}
+      if (guestOrders.length > 0) {
+        localStorage.setItem(userOrdersKey, JSON.stringify([...userOrders, ...guestOrders]));
+        localStorage.removeItem(guestOrdersKey);
+      }
+    }
+
+    /* ---------- 8. 네비게이션 ---------- */
     function getFilteredProducts(category) {
       if (!category || category === "ALL") return products;
       return products.filter(p => p.category === category);
     }
-
     function showPage(pageId, push = true) {
       document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
       document.getElementById("page-" + pageId).classList.add("active");
       if (push) history.pushState({ page: pageId }, "", "#" + pageId);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
     function goToHome() { showPage("home"); }
-
     function goToList(category = "ALL") {
       currentCategory = category;
       document.getElementById("currentCategoryLabel").textContent = category;
       renderProductList(category);
       showPage("list");
     }
-
     function goBackToCurrentList() { goToList(currentCategory || "ALL"); }
-
     function goToCart() {
+      loadCart();
       renderCart();
+      renderCartGuestNotice();
       showPage("cart");
     }
+    function goToLogin() {
+      clearAuthErrors();
+      const sid = getOrCreateGuestId();
+      const b = document.getElementById("loginGuestId");
+      if (b) b.textContent = sid;
+      showPage("login");
+    }
+    function goToSignup() {
+      clearAuthErrors();
+      const sid = getOrCreateGuestId();
+      const a = document.getElementById("signupGuestId");
+      if (a) a.textContent = sid;
+      showPage("signup");
+    }
+    // MY ACCOUNT: 로그인 상태면 주문목록, 비로그인이면 로그인 페이지
+    function goToMyAccount() {
+      if (isLoggedIn()) {
+        renderAccountPage();
+        showPage("account");
+      } else {
+        goToLogin();
+      }
+    }
 
+    /* ---------- 9. 상품 목록/상세 ---------- */
     function renderProductList(category) {
       const grid = document.getElementById("productGrid");
       const items = getFilteredProducts(category);
@@ -910,7 +1153,6 @@
         grid.appendChild(card);
       });
     }
-
     function selectProduct(product) {
       currentProduct = { ...product };
       currentQty = 1;
@@ -922,7 +1164,6 @@
       document.getElementById("totalPrice").textContent = product.price.toLocaleString() + "원";
       showPage("detail");
     }
-
     function changeQty(delta) {
       if (!currentProduct) return;
       currentQty = Math.max(1, currentQty + delta);
@@ -930,18 +1171,17 @@
       document.getElementById("totalPrice").textContent = (currentProduct.price * currentQty).toLocaleString() + "원";
     }
 
+    /* ---------- 10. 장바구니 동작 ---------- */
     function addToCart() {
       if (!currentProduct) return;
+      loadCart();
       const existing = cart.find(item => item.id === currentProduct.id);
-      if (existing) {
-        existing.qty += currentQty;
-      } else {
-        cart.push({ ...currentProduct, qty: currentQty });
-      }
+      if (existing) existing.qty += currentQty;
+      else cart.push({ ...currentProduct, qty: currentQty });
+      saveCart();
       renderCart();
-      showToast("장바구니에 담겼어요 🛒");
+      showToast("장바구니에 담겼어요");
     }
-
     function renderCart() {
       const cartItems = document.getElementById("cartItems");
       cartItems.innerHTML = "";
@@ -968,14 +1208,254 @@
           cartItems.appendChild(itemEl);
         });
       }
-
       const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
       document.getElementById("cartSubtotal").textContent = total.toLocaleString() + "원";
       document.getElementById("cartTotal").textContent = total.toLocaleString() + "원";
       document.getElementById("orderSubtotal").textContent = total.toLocaleString() + "원";
       document.getElementById("orderTotal").textContent = total.toLocaleString() + "원";
     }
+    function renderCartGuestNotice() {
+      const wrap = document.getElementById("cartGuestNotice");
+      if (!wrap) return;
+      if (isLoggedIn()) { wrap.innerHTML = ""; return; }
+      wrap.innerHTML = `
+        <div class="guest-notice">
+          비로그인 상태입니다. 임시 ID <strong>${getOrCreateGuestId()}</strong> 로 장바구니가 저장 중이에요.
+          로그인하면 자동으로 회원 장바구니에 병합됩니다.
+        </div>
+      `;
+    }
+    function changeCartQty(productId, delta) {
+      loadCart();
+      const item = cart.find(i => i.id === productId);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== productId);
+        saveCart();
+        renderCart();
+        showToast("상품이 장바구니에서 제거되었어요");
+        return;
+      }
+      saveCart();
+      renderCart();
+    }
+    function removeFromCart(productId) {
+      loadCart();
+      cart = cart.filter(i => i.id !== productId);
+      saveCart();
+      renderCart();
+      showToast("상품이 장바구니에서 제거되었어요");
+    }
+    function goToOrder() {
+      if (cart.length === 0) {
+        alert("장바구니에 담긴 상품이 없습니다.");
+        return;
+      }
+      showPage("order");
+    }
+    function selectPayment(el, method) {
+      document.querySelectorAll(".payment-method").forEach(n => n.classList.remove("selected"));
+      el.classList.add("selected");
+      selectedPayment = method;
+    }
+    function completePurchase() {
+      if (cart.length === 0) {
+        alert("장바구니에 담긴 상품이 없습니다.");
+        return;
+      }
+      const orderNo = "ORD" + Date.now().toString().slice(-8);
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      // 주문 저장
+      const newOrder = {
+        orderNo,
+        date: new Date().toISOString().slice(0, 10),
+        items: cart.map(i => ({ id: i.id, name: i.name, category: i.category, price: i.price, qty: i.qty, emoji: i.emoji })),
+        total,
+        payment: selectedPayment,
+        recipient: (document.getElementById("recipientName") || {}).value || "",
+        address: (document.getElementById("address") || {}).value || "",
+        phone: (document.getElementById("phone") || {}).value || "",
+        status: "PAID"
+      };
+      const orders = loadOrders();
+      orders.push(newOrder);
+      saveOrders(orders);
+      // 완료 페이지 표시
+      document.getElementById("completeProductName").textContent = cart.map(i => i.name).join(", ");
+      document.getElementById("completeAmount").textContent = "결제금액: " + total.toLocaleString() + "원";
+      document.getElementById("orderNumber").textContent = "ORDER_ID: #" + orderNo;
+      // 카트 비우기
+      cart = [];
+      saveCart();
+      renderCart();
+      showPage("complete");
+    }
 
+    /* ---------- 11. 회원가입 / 로그인 / 로그아웃 ---------- */
+    function clearAuthErrors() {
+      ["signupUsernameError","signupEmailError","signupNameError","signupPasswordError","signupPasswordConfirmError",
+       "loginUsernameError","loginPasswordError"]
+       .forEach(id => { const el = document.getElementById(id); if (el) el.textContent = ""; });
+    }
+    function setError(id, msg) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = msg;
+    }
+    function validateSignup(username, email, name, pw, pw2) {
+      let ok = true;
+      if (!/^[A-Za-z0-9_]{4,20}$/.test(username)) {
+        setError("signupUsernameError", "영문/숫자/_ 4~20자로 입력해 주세요.");
+        ok = false;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setError("signupEmailError", "올바른 이메일 형식이 아닙니다.");
+        ok = false;
+      }
+      if (!name || name.trim().length < 1) {
+        setError("signupNameError", "이름을 입력해 주세요.");
+        ok = false;
+      }
+      if (!pw || pw.length < 8) {
+        setError("signupPasswordError", "비밀번호는 8자 이상이어야 합니다.");
+        ok = false;
+      }
+      if (pw !== pw2) {
+        setError("signupPasswordConfirmError", "비밀번호가 일치하지 않습니다.");
+        ok = false;
+      }
+      const users = getUsers();
+      if (users.find(u => u.username.toLowerCase() === username.toLowerCase())) {
+        setError("signupUsernameError", "이미 사용 중인 아이디입니다.");
+        ok = false;
+      }
+      if (users.find(u => u.email.toLowerCase() === email.toLowerCase())) {
+        setError("signupEmailError", "이미 가입된 이메일입니다.");
+        ok = false;
+      }
+      return ok;
+    }
+    function signup() {
+      clearAuthErrors();
+      const username = document.getElementById("signupUsername").value.trim();
+      const email    = document.getElementById("signupEmail").value.trim();
+      const name     = document.getElementById("signupName").value.trim();
+      const pw       = document.getElementById("signupPassword").value;
+      const pw2      = document.getElementById("signupPasswordConfirm").value;
+      if (!validateSignup(username, email, name, pw, pw2)) return;
+      const users = getUsers();
+      const newUser = {
+        username, email, name,
+        passwordHash: pseudoHash(pw),
+        joinedAt: new Date().toISOString().slice(0, 10),
+        previousGuestId: localStorage.getItem(STORAGE.GUEST_ID) || null
+      };
+      users.push(newUser);
+      saveUsers(users);
+      const sessionUser = { username, email, name, joinedAt: newUser.joinedAt };
+      const userSid = "USER-" + username;
+      mergeGuestDataInto(userSid);
+      setCurrentUser(sessionUser);
+      loadCart();
+      showToast("piora 가입을 환영합니다");
+      goToMyAccount();
+    }
+    function login() {
+      clearAuthErrors();
+      const username = document.getElementById("loginUsername").value.trim();
+      const pw       = document.getElementById("loginPassword").value;
+      if (!username) { setError("loginUsernameError", "아이디를 입력해 주세요."); return; }
+      if (!pw)       { setError("loginPasswordError", "비밀번호를 입력해 주세요."); return; }
+      const users = getUsers();
+      const found = users.find(u => u.username.toLowerCase() === username.toLowerCase());
+      if (!found || found.passwordHash !== pseudoHash(pw)) {
+        setError("loginPasswordError", "아이디 또는 비밀번호가 올바르지 않습니다.");
+        return;
+      }
+      const sessionUser = { username: found.username, email: found.email, name: found.name, joinedAt: found.joinedAt };
+      const userSid = "USER-" + found.username;
+      mergeGuestDataInto(userSid);
+      setCurrentUser(sessionUser);
+      loadCart();
+      showToast("환영합니다, " + (found.name || found.username) + "님");
+      goToMyAccount();
+    }
+    function logout() {
+      const u = getCurrentUser();
+      setCurrentUser(null);
+      // 로그아웃 시 익명성 분리를 위해 새 게스트 ID 발급
+      localStorage.removeItem(STORAGE.GUEST_ID);
+      getOrCreateGuestId();
+      loadCart();
+      renderCart();
+      showToast((u ? u.username + "님, " : "") + "로그아웃되었습니다");
+      goToHome();
+    }
+
+    /* ---------- 12. MY ACCOUNT (주문 목록) ---------- */
+    function renderAccountPage() {
+      const user = getCurrentUser();
+      if (!user) return;
+      const welcome = document.getElementById("accountWelcome");
+      const meta    = document.getElementById("accountUserMeta");
+      welcome.textContent = (user.name || user.username) + "님, 주문 내역을 확인하세요.";
+      meta.innerHTML =
+        `<div>ID <strong>@${user.username}</strong></div>` +
+        `<div style="margin-top:4px;">EMAIL ${user.email || "-"}</div>` +
+        `<div style="margin-top:4px;">JOINED ${user.joinedAt || "-"}</div>`;
+      renderOrders();
+    }
+    function renderOrders() {
+      const list = document.getElementById("ordersList");
+      if (!list) return;
+      const orders = loadOrders().slice().sort((a, b) => b.orderNo.localeCompare(a.orderNo));
+      if (orders.length === 0) {
+        list.innerHTML = `<div class="empty-cart">아직 주문 내역이 없습니다.</div>`;
+        return;
+      }
+      list.innerHTML = orders.map(o => {
+        const isCancelled = o.status === "CANCELLED";
+        const itemsText = o.items.map(i => `${i.name} × ${i.qty}`).join(", ");
+        const payText = (o.payment || "").toUpperCase();
+        const cancelInfo = isCancelled && o.cancelledAt
+          ? `<div class="user-meta" style="margin-top:6px;">취소일 ${o.cancelledAt}</div>` : "";
+        const actionBtn = isCancelled
+          ? `<span class="user-meta">결제 취소 완료</span>`
+          : `<button class="btn btn-secondary" style="padding:8px 16px;" onclick="cancelOrder('${o.orderNo}')">결제 취소</button>`;
+        return `
+          <div class="order-card ${isCancelled ? 'cancelled' : ''}">
+            <div class="order-row">
+              <span class="order-id">#${o.orderNo}</span>
+              <span class="status-pill ${isCancelled ? 'cancelled' : 'paid'}">${o.status}</span>
+            </div>
+            <div class="order-date">${o.date} · ${payText}</div>
+            <div class="order-products">${itemsText}</div>
+            ${cancelInfo}
+            <div class="order-row" style="margin-top:10px;">
+              <span class="order-total">${o.total.toLocaleString()}원</span>
+              ${actionBtn}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+    function cancelOrder(orderNo) {
+      if (!confirm("주문 #" + orderNo + " 의 결제를 취소하시겠습니까?")) return;
+      const orders = loadOrders();
+      const target = orders.find(o => o.orderNo === orderNo);
+      if (!target) return;
+      if (target.status === "CANCELLED") {
+        showToast("이미 취소된 주문입니다.");
+        return;
+      }
+      target.status = "CANCELLED";
+      target.cancelledAt = new Date().toISOString().slice(0, 10);
+      saveOrders(orders);
+      renderOrders();
+      showToast("결제가 취소되었습니다");
+    }
+
+    /* ---------- 13. 유틸 ---------- */
     function showToast(message) {
       const toast = document.getElementById("toast");
       if (!toast) return;
@@ -984,65 +1464,14 @@
       setTimeout(() => toast.classList.remove("show"), 2000);
     }
 
-    function changeCartQty(productId, delta) {
-      const item = cart.find(i => i.id === productId);
-      if (!item) return;
-      item.qty += delta;
-      if (item.qty <= 0) {
-        cart = cart.filter(i => i.id !== productId);
-        renderCart();
-        showToast("상품이 장바구니에서 제거되었어요");
-        return;
-      }
-      renderCart();
-    }
-
-    function removeFromCart(productId) {
-      cart = cart.filter(i => i.id !== productId);
-      renderCart();
-      showToast("상품이 장바구니에서 제거되었어요");
-    }
-
-    function goToOrder() {
-      if (cart.length === 0) {
-        alert("장바구니에 담긴 상품이 없습니다.");
-        return;
-      }
-      showPage("order");
-    }
-
-    function selectPayment(el, method) {
-      document.querySelectorAll(".payment-method").forEach(n => n.classList.remove("selected"));
-      el.classList.add("selected");
-      selectedPayment = method;
-    }
-
-    function completePurchase() {
-      if (cart.length === 0) {
-        alert("장바구니에 담긴 상품이 없습니다.");
-        return;
-      }
-      const orderNo = "ORD" + Date.now().toString().slice(-6);
-      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-
-      document.getElementById("completeProductName").textContent = cart.map(i => i.name).join(", ");
-      document.getElementById("completeAmount").textContent = "결제금액: " + total.toLocaleString() + "원";
-      document.getElementById("orderNumber").textContent = "ORDER_ID: #" + orderNo;
-
-      cart = [];
-      renderCart();
-      showPage("complete");
-    }
-
+    /* ---------- 14. 초기화 / 라우팅 ---------- */
     window.onpopstate = function (event) {
-      if (event.state && event.state.page) {
-        showPage(event.state.page, false);
-      } else {
-        showPage("home", false);
-      }
+      if (event.state && event.state.page) showPage(event.state.page, false);
+      else showPage("home", false);
     };
-
     window.addEventListener("load", () => {
+      getOrCreateGuestId();  // 첫 진입 시 임시 ID 발급
+      loadCart();
       history.replaceState({ page: "home" }, "", "#home");
     });
   </script>
